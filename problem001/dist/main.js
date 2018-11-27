@@ -3,8 +3,8 @@
  * @author Diego Maroto
  * @version 20181126
  */
-const INPUT = [7, 10, 15, 3];
-const OBJECTIVE = 14;
+const INPUT = [10, 7, 15, 3, 7];
+const OBJECTIVE = 17;
 class Solution {
     constructor(nums) {
         this.nums = nums;
@@ -25,3 +25,4 @@ class Solution {
 }
 const solution = new Solution(INPUT);
 console.log(solution.check());
+console.log(solution.mapa);

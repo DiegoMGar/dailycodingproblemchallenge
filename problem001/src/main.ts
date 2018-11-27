@@ -3,7 +3,7 @@
  * @version 20181126
  */
 
-const INPUT = [10, 15, 3, 7]
+const INPUT = [10, 7, 15, 3, 7]
 const OBJECTIVE = 17
 
 interface Mapa {
