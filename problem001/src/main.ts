@@ -7,23 +7,22 @@ const INPUT = [10, 15, 3, 7]
 const OBJECTIVE = 17
 
 interface Mapa {
-    [index: number]: number
+    [index: number]: boolean
 }
 
 class Solution {
     private _mapa: Mapa
     constructor(private nums: number[]) {
         this._mapa = {}
-        for (let x in nums) {
-            this._mapa[nums[x]] = nums[x]
-        }
     }
     check() {
         return this.nums.find((x: number): boolean => {
             const minus = OBJECTIVE - x
-            if (!this._mapa[x] || !this._mapa[minus])
-                return false
-            return minus === this._mapa[minus]
+            if (this._mapa[minus] === undefined) {
+                this._mapa[x] = true;
+                return false;
+            }
+            return true;
         }) !== undefined
     }
     get mapa() { return this._mapa }

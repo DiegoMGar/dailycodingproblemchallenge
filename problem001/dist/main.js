@@ -3,22 +3,21 @@
  * @author Diego Maroto
  * @version 20181126
  */
-const INPUT = [10, 15, 3, 7];
-const OBJECTIVE = 26;
+const INPUT = [7, 10, 15, 3];
+const OBJECTIVE = 14;
 class Solution {
     constructor(nums) {
         this.nums = nums;
         this._mapa = {};
-        for (let x in nums) {
-            this._mapa[nums[x]] = nums[x];
-        }
     }
     check() {
         return this.nums.find((x) => {
             const minus = OBJECTIVE - x;
-            if (!this._mapa[x] || !this._mapa[minus])
+            if (this._mapa[minus] === undefined) {
+                this._mapa[x] = true;
                 return false;
-            return minus === this._mapa[minus];
+            }
+            return true;
         }) !== undefined;
     }
     get mapa() { return this._mapa; }
