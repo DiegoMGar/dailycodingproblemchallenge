@@ -17,7 +17,7 @@ class SolutionNode {
         console.log(serialized)
         const re = /\(([a-z.]+),(\(\)),(\(\))\)/i;
         while(re.exec(serialized) !== null){
-            serialized = serialized.replace(re, '')
+            serialized = serialized.replace(re, '()')
             console.log(serialized)
         }
         return serialized;
