@@ -3,18 +3,25 @@
  * @version 20181127
  */
 
-const INPUT = [1, 2, 3, 4, 5];
-const MUST_RETURN = [120, 60, 40, 30, 24];
-class Solution {
-    private reduce: number
-    constructor(public nums: number[]) {
-        this.reduce = nums.reduce((prev, current) => current * prev, 1)
+class SolutionNode {
+    constructor(public val: string,
+        public left: SolutionNode | undefined = undefined,
+        public right: SolutionNode | undefined = undefined) { }
+    serialize(node: SolutionNode): string {
+        return '';
     }
-    check() { return this.nums.map((x: number): number => this.reduce * (x ** -1)) }
+    deserialize(serialized: string): SolutionNode {
+        return this;
+    }
 }
 
-const solution = new Solution(INPUT);
-console.log("Expected: ");
-console.log(MUST_RETURN);
-console.log("Solution: ")
-console.log(solution.check());
+const INPUT = new SolutionNode('root', new SolutionNode('left', new SolutionNode('left.left')), new SolutionNode('right'));
+const MUST_RETURN = 'left.left';
+
+const serialized: string = INPUT.serialize(INPUT);
+const deserialized: SolutionNode = INPUT.deserialize(serialized);
+
+console.log('Expected: ' + MUST_RETURN);
+if (deserialized.left)
+    if (deserialized.left.left)
+        console.log('Deserialized: ' + deserialized.left.left.val);

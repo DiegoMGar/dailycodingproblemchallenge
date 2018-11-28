@@ -22,7 +22,7 @@ Solved: Not yet.
     
 > npm start  
   
-> See if Solution::check() returns what it should  
+> See if SolutionNode::deserialize() returns what it should  
   
 > Be awesome, give me feedback :D  
   
