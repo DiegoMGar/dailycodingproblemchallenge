@@ -25,4 +25,3 @@ class Solution {
 }
 const solution = new Solution(INPUT);
 console.log(solution.check());
-console.log(solution.mapa);
