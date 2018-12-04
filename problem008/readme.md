@@ -15,7 +15,7 @@ For example, the following tree has 5 unival subtrees:
  1   1  
 ```  
      
-Solved: Not yet.  
+Solved: Done.  
 
 ### Usage:  
 > Change INPUT and MUST_RETURN variables in main.ts  
